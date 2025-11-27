@@ -1,5 +1,6 @@
 // app/page.tsx
 'use client'
+import { QRCodeCanvas } from 'qrcode.react'
 
 const PORTFOLIO_URL = 'https://polapoholic.vercel.app'
 
@@ -47,13 +48,13 @@ export default function HomePage() {
                     </a>
                   </div>
                   {/* 필요하면 이메일 / 깃허브 추가 */}
-                  {/* <div>
+                  <div>
                   <span className="font-medium text-slate-900">Email</span>{' '}
                   <a
                     href="mailto:you@example.com"
                     className="text-sky-600 hover:text-sky-700 hover:underline"
                   >
-                    you@example.com
+                    polapoholic@gmail.com
                   </a>
                 </div>
                 <div>
@@ -66,7 +67,7 @@ export default function HomePage() {
                   >
                     github.com/polapoholic
                   </a>
-                </div> */}
+                </div>
                 </div>
               </div>
 
@@ -93,29 +94,30 @@ export default function HomePage() {
             </div>
 
             {/* 오른쪽: QR 코드 카드 */}
-            <div className="w-full md:w-72 bg-white/95 backdrop-blur rounded-3xl shadow-lg border border-sky-100 p-6 flex flex-col items-center justify-between">
+            <div
+                className="w-full md:w-72 bg-white/95 backdrop-blur rounded-3xl shadow-lg border border-sky-100 p-6 flex flex-col items-center justify-between">
               <div className="w-full text-center mb-4">
                 <p className="text-xs font-medium tracking-[0.25em] text-sky-500 uppercase">
                   QR Code
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
                   폰 카메라로 스캔하면
-                  <br />
+                  <br/>
                   바로 포트폴리오로 이동합니다.
                 </p>
               </div>
 
               <div className="w-48 h-48 md:w-56 md:h-56 bg-sky-50 rounded-2xl border border-sky-100 flex items-center justify-center overflow-hidden">
-                <img
-                    src={qrSrc}
-                    alt="Portfolio QR Code"
-                    className="w-full h-full object-contain"
+                <QRCodeCanvas
+                    value={PORTFOLIO_URL}
+                    size={208}       // 캔버스 크기
+                    includeMargin
                 />
               </div>
 
               <p className="mt-4 text-[11px] text-slate-500 text-center leading-snug">
                 길게 눌러 이미지 저장 후
-                <br />
+                <br/>
                 카카오톡 / 명함 앱 등에 붙여서 공유해도 좋습니다.
               </p>
             </div>
