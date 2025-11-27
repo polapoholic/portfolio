@@ -1,4 +1,5 @@
 // app/page.tsx
+'use client'
 
 const PORTFOLIO_URL = 'https://polapoholic.vercel.app'
 
