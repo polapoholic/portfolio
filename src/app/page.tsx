@@ -107,7 +107,8 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="w-48 h-48 md:w-56 md:h-56 bg-sky-50 rounded-2xl border border-sky-100 flex items-center justify-center overflow-hidden">
+              <div
+                  className="w-48 h-48 md:w-56 md:h-56 bg-sky-50 rounded-2xl border border-sky-100 flex items-center justify-center overflow-hidden">
                 <QRCodeCanvas
                     value={PORTFOLIO_URL}
                     size={208}       // 캔버스 크기
@@ -116,9 +117,9 @@ export default function HomePage() {
               </div>
 
               <p className="mt-4 text-[11px] text-slate-500 text-center leading-snug">
-                길게 눌러 이미지 저장 후
+                QR 이미지는 브라우저에서 직접 생성됩니다.
                 <br/>
-                카카오톡 / 명함 앱 등에 붙여서 공유해도 좋습니다.
+                캡처해서 명함이나 카톡에 붙여도 됩니다.
               </p>
             </div>
           </div>
